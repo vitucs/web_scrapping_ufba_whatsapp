@@ -44,12 +44,14 @@ while True:
     schedule.run_pending()
     time.sleep(1)
     atual = len(lista_trs)
-
-    if (anterior != atual):
-        contatos = ["Eu", "Lili"]
+    if (loop == 0):
         driver = webdriver.Chrome()
         driver.get("https://web.whatsapp.com")
         time.sleep(12)
+        
+    if (anterior != atual):
+        contatos = ["Eu", "Lili"]
+        
         if loop:
             for contato in contatos:
                 mensagem = "Nova noticia cadastrada em https://www.ingresso.ufba.br/." + ultMsg
